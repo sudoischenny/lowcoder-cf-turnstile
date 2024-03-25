@@ -134,7 +134,7 @@ async function createProject(projectName, options) {
 
   const initialPackageJson = {
     name: projectName,
-    version: "0.0.1",
+    version: "0.0.2",
     type: "module",
     license: "MIT",
   };
