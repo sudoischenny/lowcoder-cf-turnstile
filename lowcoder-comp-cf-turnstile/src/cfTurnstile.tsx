@@ -29,6 +29,7 @@ const childrenMap = {
 
 
 const turnstileCompBase = new UICompBuilder(childrenMap, (props: any) => {
+
   function setToken(token: string) {
     props.CFToken.onChange(token);
 }
@@ -36,7 +37,7 @@ const turnstileCompBase = new UICompBuilder(childrenMap, (props: any) => {
   return (
     <div className={styles.wrapper}>
       
-      <Turnstile siteKey={props.clientKey.value} onSuccess={setToken}/>
+      <Turnstile siteKey={props.clientKey.value} onSuccess={setToken} onExpire={() => props.CFToken.onChange("EXPIRED")} onError={() => props.CFToken.onChange("ERROR")} options={{theme: 'light'}}/>
     </div>
   );
 })
